@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content">
+    <div class="container_12">
+        <div class="grid_6 push_3">
+            <h2 style="text-align: center">Login Page</h2>
+            <form action="{{ url('login') }}">
+                <table style="width: 100%;text-align: center">
+                    <tr>
+                        <td><input type="text" placeholder="Username" class="form-input" name="tb-username"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" placeholder="Password" class="form-input" name="tb-password"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <input type="submit" value="Login" class="button button-submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+{% endblock %}

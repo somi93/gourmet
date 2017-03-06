@@ -1,0 +1,57 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container_12">
+        <div class="grid_5">
+            <h2>About Us</h2>
+            <img src="images/page2_img1.jpg" alt="" class="img_inner">
+            <p class="col1">The Gourmet is restaurant in Belgrade. Donec et nibh non turpis pellentesque suscipit eget. </p>
+            <p>A great place to have a relaxing break from sight-seeing and to recover with a good meal and an excellent glass of wine.</p>
+            The warm, welcoming atmosphere will suit your senses and give you a distinguished taste of the city of Belgrade.  <br>
+            <a href="#" class="btn m1">More</a> </div>
+        <div class="grid_5 prefix_2">
+            <h2>Testimonials</h2>
+            <ul class="carousel2">
+                <li>
+                    <blockquote> <img src="images/page2_img2.png" alt="">
+                        <div class="extra_wrapper">
+                            <div class="title">Sara &amp; Kevin <br>
+                                Jonson</div>
+                        </div>
+                        <div class="clear"></div>
+                        <p class="col1">
+                            <a href="#">The ambiance, the comfort, the superb international cuisine of "Novak Café & Restaurant" which have been the privilege of the inhabitants of Belgrade so far, can now be in your country, in your city.</a>
+                        </p>
+                       </blockquote>
+                        <br/>
+                </li>
+                <li>
+                    <blockquote> <img src="images/page2_img2-1.png" alt="">
+                        <div class="extra_wrapper">
+                            <div class="title">Moira &amp; Brett<br>
+                                Clark</div>
+                        </div>
+                        <div class="clear"></div>
+                        <p class="col1">The international cuisine restaurant with an extraordinary combination of different flavours, authentic interior and excellent service make it unique and favourite among all generations.</p></blockquote>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="grid_12">
+            <div class="hor_separator hor1"></div>
+            <h2 class="head1">Our Best Chefs</h2>
+        </div>
+        <div class="clear"></div>
+        <div class="chefs">
+            {% for chef in chefs %}
+                <div class="grid_3">
+                    <img src="{{ chef.getPhoto() }}" alt="" class="img_inner">
+                    {{ chef.getname() }}
+                    <p class="col1"><a href="#">{{ chef.getDescription() }}</a></p>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}

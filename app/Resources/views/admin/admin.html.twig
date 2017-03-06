@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content">
+        <div class="container_12">
+
+            <div class="grid_6">
+                <h2>Database Operations</h2>
+                <ul class="list l1">
+                    <li data-type="link"><a href="#">Navigation Links</a></li>
+                    <li data-type="menu"><a href="#">Products</a></li>
+                    <li data-type="chef"><a href="#">Chefs</a></li>
+                    <li data-type="gallery"><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div id="link" class="grid_3 hidden admin-block" style="text-align: center">
+                <h2>Insert Navigation Link</h2>
+                {{ form_start(navigationForm) }}
+                {{ form_widget(navigationForm) }}
+                <button type="submit" class="button button-submit">Insert</button>
+                {{ form_end(navigationForm) }}
+            </div>
+            <div id="menu" class="grid_3 hidden admin-block" style="text-align: center">
+                <h2>Insert Menu</h2>
+                {{ form_start(menuForm) }}
+                {{ form_row(menuForm.name) }}
+                {{ form_row(menuForm.description) }}
+                {{ form_row(menuForm.price) }}
+                {{ form_row(menuForm.photo) }}
+                <button type="submit" class="button button-submit">Insert</button>
+                {{ form_end(menuForm) }}
+            </div>
+            <div id="chef" class="grid_3 hidden admin-block" style="text-align: center">
+                <h2>Insert Chef</h2>
+                {{ form_start(chefForm) }}
+                {{ form_row(chefForm.name) }}
+                {{ form_row(chefForm.description) }}
+                {{ form_row(chefForm.photo) }}
+                <button type="submit" class="button button-submit">Insert</button>
+                {{ form_end(chefForm) }}
+            </div>
+            <div id="gallery" class="grid_6 hidden admin-block" style="text-align: center">
+                <h2>Insert Gallery Photo</h2>
+                {{ form_start(galleryForm) }}
+                {{ form_row(galleryForm.brochure) }}
+                <input type="submit" value="Insert" class="button button-submit">
+                {{ form_end(galleryForm) }}
+            </div>
+{% endblock %}

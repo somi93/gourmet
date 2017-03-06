@@ -1,0 +1,47 @@
+  {% extends 'base.html.twig' %}
+
+  {% block content %}
+
+    <div class="content">
+      <div class="container_12">
+        <div class="grid_6">
+          <h2>Our Menu</h2>
+          <p>
+            The international cuisine restaurant with an extraordinary combination of different flavours, authentic interior and excellent service make it unique and favourite among all generations.
+          </p>
+          <div class="menu">
+            {% for product in products %}
+              <div class="grid_3" style="width: 210px"> <img src="{{ product.getPhoto() }}" alt="" class="img_inner">
+                <h3><a href="#">{{ product.getName() }}</a></h3>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="grid_5 prefix_1">
+          <h2 class="head2">Chef’s Secrets</h2>
+          <ul class="list l1">
+            <li><a href="#">Prep work is the key to a chef's success.</a></li>
+            <li><a href="#">Seasoning brings food to the next level.</a></li>
+            <li><a href="#">Tin foil is a great cooking aide.</a></li>
+            <li><a href="#">Homemade salad dressing is easier to make than you think.</a></li>
+            <li><a href="#">When baking, only mix until all ingredients are incorporated.</a></li>
+            <li><a href="#">Prep work is the key to a chef's success.</a></li>
+            <li><a href="#">Seasoning brings food to the next level.</a></li>
+            <li><a href="#">Tin foil is a great cooking aide.</a></li>
+            <li><a href="#">Homemade salad dressing is easier to make than you think.</a></li>
+            <li><a href="#">When baking, only mix until all ingredients are incorporated.</a></li>
+          </ul>
+          <h2 class="head1">Wine List</h2>
+          <ul class="list">
+            <li><a href="#">Domaine Serene</a></li>
+            <li><a href="#">Beaux Frères</a></li>
+            <li><a href="#">Château Climens</a></li>
+            <li><a href="#">Produttori del Barbaresco</a></li>
+            <li><a href="#">Hartford Family</a></li>
+            <li><a href="#">Hamilton Russell</a></li>
+            <li><a href="#">Abadia Retuerta</a></li>
+          </ul>
+        </div>
+
+  {% endblock %}

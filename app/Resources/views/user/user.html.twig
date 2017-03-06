@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="slider-relative">
+    <div class="slider-block">
+      <div class="slider">
+        <ul class="items">
+          {% for photo in sliderPhotos %}
+            <li><img src="{{ photo.getImage() }}" alt=""></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content page1">
+    <div class="container_12">
+      <div class="grid_7">
+        <h2>Welcome</h2>
+        <div class="page1_block col1"> <img src="images/welcome_img.png" alt="">
+          <div class="extra_wrapper">
+            <p><span class="col2">A great place to have a relaxing break from sight-seeing and to recover with a good meal and an excellent glass of wine.</p>
+            The warm, welcoming atmosphere will suit your senses and give you a distinguished taste of the city of Belgrade. <br>
+            <a href="#" class="btn">more</a> </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="grid_5">
+          <h2>Features</h2>
+          <ul class="list">
+            <li><a href="#">Salads, whose rich colours, vitamins and dressings will surprise you.</a></li>
+            <li><a href="#">Pastas and sauces that will touch the most refined taste buds.</a></li>
+            <li><a href="#">Steaks are marinated with many tested worldly techniques.</a></li>
+            <li><a href="#">A special gluten-free menu!</a></li>
+            <li><a href="#">Rich range of quality wines from the world's most famous regions.</a></li>
+            <li><a href="#">Desserts that will close the magic circle, will make you feel special and happy.</a></li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="grid_12">
+          <div class="hor_separator"></div>
+        </div>
+        <div class="grid_12">
+          <div class="car_wrap">
+            <h2>Best Choice</h2>
+            <a href="#" class="prev"></a><a href="#" class="next"></a>
+            <ul class="carousel1">
+              {% for product in products %}
+                <li>
+                  <div><img src="{{ product.getPhoto() }}" alt="">
+                    <div class="col1 upp"> <a href="#">{{ product.getName() }}</a></div>
+                    <span> {{ product.getDescription() }}</span>
+                    <div class="price">{{ product.getPrice() }}$</div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+{% endblock %}
